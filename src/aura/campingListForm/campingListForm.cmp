@@ -48,7 +48,7 @@
         
         <div class="slds-form-element">
             <ui:button label="Add Camping Item"
-                       class="slds-button slds-button--brand"
+                       class="slds-button slds-button--brand no-shadow"
                        press="{!c.submitForm}"/>
         </div>
     </form>

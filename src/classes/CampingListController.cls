@@ -10,7 +10,7 @@ public with sharing class CampingListController {
     @AuraEnabled
     public static Camping_Item__c saveItem(Camping_Item__c campingItem) {
         try {
-            /*Throwing various types of Exceptions to demnostrate
+            /*Throwing various types of Exceptions to demonstrate
             how to handle server side exceptions in Lightning 
             Components.
             Throwing a standard exception or a custom exception
@@ -35,16 +35,16 @@ public with sharing class CampingListController {
             and obviously you would be feeling like $%#@!!, cursing, is this 
             they(Salesforce) call a modern enterprise web app front end development 
             framework*/
-            //throw excptn;
+            throw excptn;
             /*Logic to log the exception and generate a message based on the excpetion
             using the Exception Framework needs to be added here*/
             //Uncomment the line below and comment the "throw excptn" line
-            throw new AuraHandledException('Custom Exception Message');
+            //throw new AuraHandledException('Custom Exception Message');
             /*This AuraHandledException comes like an oasis in the desert where 
             you have been lost for days and you are done with all your supplies,
             metaphors aside, actually of all the Exceptions on Force.com, this is
             the only known exception to me that if thrown to the front end
-            JS controller/handler to handle, then the error in the response contains your
+            JS controller/handler to handle, then at the JS controller/handler end the error in the response contains your
             custom passed message i.e you will get "Custom Exception Message" in this case
             */
  

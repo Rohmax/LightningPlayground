@@ -1,6 +1,6 @@
 <aura:component >
     <aura:attribute name="item" type="Camping_Item__c" required="true"/>
-	<p>Name:
+	<!--p>Name:
         <ui:outputText value="{!v.item.Name}"/>
     </p>
     <p>Price:
@@ -12,6 +12,37 @@
     <p>Packed:
         <ui:outputCheckbox value="{!v.item.Packed__c}"/>
     </p>
-    <!--ui:button label="Packed!" press="{!c.packItem}"/-->
+    <ui:button label="Packed!" press="{!c.packItem}"/-->
+    <div class="slds-card">
+
+        <!-- Color the item green if the expense is reimbursed -->
+        <div class="{!v.item.Packed__c == true ?
+            'slds-theme--success' : 'slds-theme--warning'}">
+
+            <header class="slds-card__header slds-grid grid--flex-spread">
+                <a aura:id="expense" href="{!'/' + v.item.Id}">
+                    <h3>{!v.item.Name}</h3>
+                </a>
+            </header>
+
+            <section class="slds-card__body">
+                <div class="slds-tile slds-hint-parent">
+                    <p class="slds-tile__title slds-truncate">Price:
+                        <ui:outputCurrency value="{!v.item.Price__c}"/>
+                    </p>
+                    <p class="slds-truncate">Quantity:
+                        <ui:outputNumber value="{!v.item.Quantity__c}"/>
+                    </p>
+                    <p class="slds-truncate">Packed:
+                        <ui:outputCheckbox value="{!v.item.Packed__c}"/>
+                    </p>
+                    <!--p class="slds-truncate">Packed?
+                        <ui:inputCheckbox value="{!v.item.Packed__c}"
+                            click="{!c.clickPacked}"/>
+                    </p-->
+                </div>
+            </section>
+        </div>
+    </div>
 
 </aura:component>

@@ -7,7 +7,9 @@
     <aura:handler name="addItem" event="c:addItemEvent" action="{!c.handleAdditem}"/>
     
     <!-- PAGE HEADER -->
-    <ui:outputText value="{!v.errMessage}"/>
+    <div class="slds-theme--error slds-theme--alert-texture">
+        <h2 class="slds-text-heading--medium text-align-center" id="prompt-heading-id">{!v.errMessage}</h2>
+    </div>
     <div class="slds-page-header" role="banner">
       <div class="slds-grid">
         <div class="slds-col">
